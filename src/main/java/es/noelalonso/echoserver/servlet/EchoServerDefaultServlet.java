@@ -44,10 +44,6 @@ public class EchoServerDefaultServlet extends HttpServlet {
 				url = "http://" + url;
 			}
 			
-			Map<String, String> params = new HashMap<String, String>();
-			params.put("prop1", "1");
-			params.put("prop2", "value");
-
 			String nextResult = this.restTemplate.getForObject(url, String.class);
 			LOGGER.debug("EchoServerDefaultServlet.nextResult: " + nextResult);
 			
