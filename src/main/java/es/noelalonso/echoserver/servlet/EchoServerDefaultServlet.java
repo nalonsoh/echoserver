@@ -10,12 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 @WebServlet("/*")
 public class EchoServerDefaultServlet extends HttpServlet {
+	
+	private static final Log LOGGER = LogFactory.getLog(EchoServerDefaultServlet.class);
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = 1L;
@@ -30,7 +34,7 @@ public class EchoServerDefaultServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("EchoServerDefaultServlet.service");
+		LOGGER.info("EchoServerDefaultServlet.service");
 		
 		String responseText = this.text;
 		
@@ -45,7 +49,7 @@ public class EchoServerDefaultServlet extends HttpServlet {
 			params.put("prop2", "value");
 
 			String nextResult = this.restTemplate.getForObject(url, String.class);
-			System.out.println("EchoServerDefaultServlet.nextResult: " + nextResult);
+			LOGGER.debug("EchoServerDefaultServlet.nextResult: " + nextResult);
 			
 			responseText += " " + nextResult;
 		}

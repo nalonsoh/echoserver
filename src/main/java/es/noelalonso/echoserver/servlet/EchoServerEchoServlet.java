@@ -8,15 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 @WebServlet("/echo/*")
 public class EchoServerEchoServlet extends HttpServlet {
 
+	private static final Log LOGGER = LogFactory.getLog(EchoServerDefaultServlet.class);
+	
 	/** serialVersionUID */
 	private static final long serialVersionUID = 1L;
 	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("EchoServerEchoServlet.service");
+		LOGGER.info("EchoServerEchoServlet.service");
 		
 		String uri = request.getRequestURI();
 		
