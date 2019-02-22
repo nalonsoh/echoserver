@@ -3,10 +3,12 @@ MAINTAINER Noel Alonso Hernández <nalonsoh@viewnext.com>
 
 # Copiar funetes
 COPY . /tmp/src
+USER root
+RUN chown -R 1001
+USER 1001
 
 # Construir aplicacion a partir de las fuentes
-RUN chown -R 1001 /tmp/src \
-	&& /usr/local/s2i/assemble
+RUN /usr/local/s2i/assemble
 
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/s2i/run"]
