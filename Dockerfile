@@ -4,7 +4,7 @@ MAINTAINER Noel Alonso Hernández <nalonsoh@viewnext.com>
 # Copiar funetes
 COPY . /tmp/src
 USER root
-RUN chown -R 1001
+RUN chown -R 1001  /tmp/src
 USER 1001
 
 # Construir aplicacion a partir de las fuentes
