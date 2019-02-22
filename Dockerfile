@@ -1,4 +1,4 @@
-FROM noelalonso1/spring-boot-app-base-web:2.1.3
+FROM noelalonso1/spring-boot-app-builder-web:2.1.3
 MAINTAINER Noel Alonso Hernández <nalonsoh@viewnext.com>
 
 # Copiar funetes
