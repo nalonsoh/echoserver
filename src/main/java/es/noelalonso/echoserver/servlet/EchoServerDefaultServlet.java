@@ -1,8 +1,6 @@
 package es.noelalonso.echoserver.servlet;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,10 +22,10 @@ public class EchoServerDefaultServlet extends HttpServlet {
 	/** serialVersionUID */
 	private static final long serialVersionUID = 1L;
 	
-	@Value("${echo.text:}")
+	@Value("${echo_text:}")
     private String text;
 	
-	@Value("${echo.next:}")
+	@Value("${echo_next:}")
     private String next;
 
 	private RestTemplate restTemplate = new RestTemplate();
