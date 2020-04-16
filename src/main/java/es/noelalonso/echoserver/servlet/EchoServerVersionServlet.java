@@ -14,7 +14,7 @@ import org.apache.commons.logging.LogFactory;
 @WebServlet("/version")
 public class EchoServerVersionServlet extends HttpServlet {
 
-	private static final String VERSION = "v1.1";
+	private static final String VERSION = "v1.2";
 
 	private static final Log LOGGER = LogFactory.getLog(EchoServerDefaultServlet.class);
 	
